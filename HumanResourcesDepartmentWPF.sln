@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanResourcesDepartmentWPF", "HumanResourcesDepartmentWPF\HumanResourcesDepartmentWPF.csproj", "{80DE4E8F-4175-4B0D-AC7F-65D25763F931}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResourcesDepartment.EntityFramework", "HumanResourcesDepartment.EntityFramework\HumanResourcesDepartment.EntityFramework.csproj", "{28B22C44-58A8-456B-A2EC-484DFB4A2009}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanResourcesDepartment.EntityFramework", "HumanResourcesDepartment.EntityFramework\HumanResourcesDepartment.EntityFramework.csproj", "{28B22C44-58A8-456B-A2EC-484DFB4A2009}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResourcesDepartment.Domain", "HumanResourcesDepartment.Domain\HumanResourcesDepartment.Domain.csproj", "{BC789092-8179-4D20-AFA7-D0DDD35DF9E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanResourcesDepartment.Domain", "HumanResourcesDepartment.Domain\HumanResourcesDepartment.Domain.csproj", "{BC789092-8179-4D20-AFA7-D0DDD35DF9E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{6B781159-01E9-4516-862E-B832534013AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanResourcesDepartment.WPF", "HumanResourcesDepartment.WPF\HumanResourcesDepartment.WPF.csproj", "{EF248439-068B-49AA-A270-C9ADCA8D5D7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{80DE4E8F-4175-4B0D-AC7F-65D25763F931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80DE4E8F-4175-4B0D-AC7F-65D25763F931}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80DE4E8F-4175-4B0D-AC7F-65D25763F931}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80DE4E8F-4175-4B0D-AC7F-65D25763F931}.Release|Any CPU.Build.0 = Release|Any CPU
 		{28B22C44-58A8-456B-A2EC-484DFB4A2009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{28B22C44-58A8-456B-A2EC-484DFB4A2009}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28B22C44-58A8-456B-A2EC-484DFB4A2009}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +25,14 @@ Global
 		{BC789092-8179-4D20-AFA7-D0DDD35DF9E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC789092-8179-4D20-AFA7-D0DDD35DF9E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC789092-8179-4D20-AFA7-D0DDD35DF9E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B781159-01E9-4516-862E-B832534013AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B781159-01E9-4516-862E-B832534013AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B781159-01E9-4516-862E-B832534013AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B781159-01E9-4516-862E-B832534013AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF248439-068B-49AA-A270-C9ADCA8D5D7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF248439-068B-49AA-A270-C9ADCA8D5D7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF248439-068B-49AA-A270-C9ADCA8D5D7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF248439-068B-49AA-A270-C9ADCA8D5D7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

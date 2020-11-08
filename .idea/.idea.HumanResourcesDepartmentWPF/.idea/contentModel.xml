@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Labas\Proga\Project\HumanResourcesDepartmentWPF" t="IncludeFlat">
+      <e p="ConsoleApp1" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ConsoleApp1.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="ConsoleApp1.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+      </e>
+      <e p="HumanResourcesDepartment.Domain" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="HumanResourcesDepartment.Domain.csproj" t="IncludeRecursive" />
+        <e p="Models" t="Include">
+          <e p="DomainObject.cs" t="Include" />
+          <e p="Worker.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="HumanResourcesDepartment.Domain.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Services" t="Include">
+          <e p="IDataService.cs" t="Include" />
+        </e>
+      </e>
+      <e p="HumanResourcesDepartment.EntityFramework" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="HumanResourcesDbContextFactory.cs" t="Include" />
+        <e p="HumanResourcesDepartment.EntityFramework.csproj" t="IncludeRecursive" />
+        <e p="HumanResourcesDepartmentDBContext.cs" t="Include" />
+        <e p="Migrations" t="Include">
+          <e p="20201026123645_initial.cs" t="Include" />
+          <e p="20201026123645_initial.Designer.cs" t="Include" />
+          <e p="20201027224253_update_domain.cs" t="Include" />
+          <e p="20201027224253_update_domain.Designer.cs" t="Include" />
+          <e p="HumanResourcesDepartmentDBContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="HumanResourcesDepartment.EntityFramework.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Services" t="Include">
+          <e p="GenericDataService.cs" t="Include" />
+        </e>
+      </e>
+      <e p="HumanResourcesDepartmentWPF.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+    <e p="C:\Users\nikva\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\nikva\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_HumanResourcesDepartmentWPF.974880554.00" t="ExcludeRecursive" />
+    <e p="C:\Users\nikva\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
+  </component>
+</project>

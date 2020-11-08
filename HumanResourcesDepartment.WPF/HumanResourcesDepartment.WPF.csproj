@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Controls\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HumanResourcesDepartment.Domain\HumanResourcesDepartment.Domain.csproj" />
+    <ProjectReference Include="..\HumanResourcesDepartment.EntityFramework\HumanResourcesDepartment.EntityFramework.csproj" />
+  </ItemGroup>
+
+</Project>
