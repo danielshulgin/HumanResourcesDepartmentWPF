@@ -1,26 +1,25 @@
 ﻿using HumanResourcesDepartment.Domain.Models;
 using HumanResourcesDepartment.Domain.Sercices;
-using HumanResourcesDepartment.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HumanResourcesDepartment.EntityFramework.Sercices
+namespace HumanResourcesDepartment.EntityFramework.Services
 {
-    public class DepartmentService
+    public class PositionService
     {
         private readonly HumanResourcesDbContextFactory _contextFactory;
-        private readonly NonQueryDataService<Department> _nonQueryDataService;
+        private readonly NonQueryDataService<Position> _nonQueryDataService;
 
-        public DepartmentService(HumanResourcesDbContextFactory contextFactory)
+        public PositionService(HumanResourcesDbContextFactory contextFactory)
         {
             _contextFactory = contextFactory;
-            _nonQueryDataService = new NonQueryDataService<Department>(contextFactory);
+            _nonQueryDataService = new NonQueryDataService<Position>(contextFactory);
         }
 
-        public async Task<Department> Create(Department entity)
+        public async Task<Position> Create(Position entity)
         {
             return await _nonQueryDataService.Create(entity);
         }
@@ -30,29 +29,33 @@ namespace HumanResourcesDepartment.EntityFramework.Sercices
             return await _nonQueryDataService.Delete(id);
         }
 
-        public async Task<Department> Get(int id)
+        public async Task<Position> Get(int id)
         {
             using (HumanResourcesDepartmentDBContext context = _contextFactory.CreateDbContext())
             {
-                Department entity = await context.Departments
-                    .Include(d => d.Address)
+                var entity = await context.Positions
+                    .Include(p => p.Worker)
+                    .Include(p => p.Department)
+                    .Include(p => p.Profession)
                     .FirstOrDefaultAsync((e) => e.Id == id);
                 return entity;
             }
         }
 
-        public async Task<IEnumerable<Department>> GetAll()
+        public async Task<IEnumerable<Position>> GetAll()
         {
             using (HumanResourcesDepartmentDBContext context = _contextFactory.CreateDbContext())
             {
-                IEnumerable<Department> entities = await context.Departments
-                    .Include(d => d.Address)
+                IEnumerable<Position> entities = await context.Positions
+                    .Include(p => p.Worker)
+                    .Include(p => p.Department)
+                    .Include(p => p.Profession)
                     .ToListAsync();
                 return entities;
             }
         }
 
-        public async Task<Department> Update(int id, Department entity)
+        public async Task<Position> Update(int id, Position entity)
         {
             return await _nonQueryDataService.Update(id, entity);
         }

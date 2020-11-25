@@ -1,0 +1,125 @@
+﻿<UserControl x:Class="HumanResourcesDepartment.WPF.Views.DepartmentPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HumanResourcesDepartment.WPF.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="15, 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="300" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Id:" />
+            <TextBlock Grid.Column="1" Margin="20,0,0,0"
+                        Text="{Binding Department.Id}" />
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="300" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Name:" />
+            <TextBlock Grid.Column="1" Margin="20,0,0,0"
+                        Text="{Binding Department.Name}" />
+        </Grid>
+        <Grid Grid.Row="2" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="300" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Description:" />
+            <TextBlock Grid.Column="1" Margin="20,0,0,0"
+                        Text="{Binding Department.Description}" />
+        </Grid>
+        <Grid Grid.Row="3" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="300" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="ContactPhone:" />
+            <TextBlock Grid.Column="1" Margin="20,0,0,0"
+                        Text="{Binding Department.ContactPhone}" />
+        </Grid>
+        
+        <Grid Grid.Row="4" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="300" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="ContactEmail:" />
+            <TextBlock Grid.Column="1" Margin="20,0,0,0"
+                        Text="{Binding Department.ContactEmail}" />
+        </Grid>
+
+        <Grid Grid.Row="5" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="300" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Country:" />
+            <TextBlock Grid.Column="1" Margin="20,0,0,0"
+                        Text="{Binding Department.Address.Country}" />
+        </Grid>
+
+        <Grid Grid.Row="6" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="300" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="City:" />
+            <TextBlock Grid.Column="1" Margin="20,0,0,0"
+                        Text="{Binding Department.Address.City}" />
+        </Grid>
+
+        <Grid Grid.Row="7" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="300" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Street:" />
+            <TextBlock Grid.Column="1" Margin="20,0,0,0"
+                        Text="{Binding Department.Address.Street}" />
+        </Grid>
+
+        <Grid Grid.Row="8" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" SharedSizeGroup="Label" />
+                <ColumnDefinition Width="300" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="HouseNumber:" />
+            <TextBlock Grid.Column="1" Margin="20,0,0,0"
+                        Text="{Binding Department.Address.HouseNumber}" />
+        </Grid>
+
+        <Grid Grid.Row="9" Margin="0,10">
+            <Button Width="70" Height="20" Content="Remove" 
+                            Command="{Binding DeleteDepartmentCommand}" CommandParameter="{Binding Department}"/>
+        </Grid>
+    </Grid>
+</UserControl>

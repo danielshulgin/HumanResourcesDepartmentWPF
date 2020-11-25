@@ -6,18 +6,26 @@ namespace HumanResourcesDepartment.Domain.Models
 {
     public class Department : DomainObject
     {
-        public string Name { get; set; }
+        public string Name { get; private set; }
         
-        public string Description { get; set; }
+        public string Description { get; private set; }
         
-        public int Funding { get; set; }
+        public int ContactPhone { get; private set; }
         
-        public int ContactPhone { get; set; }
+        public string ContactEmail { get; private set; }
         
-        public string ContactEmail { get; set; }
-        
-        public Address Address { get; set; }
-        
-        public List<Position> Positions { get; set; }
+        public Address Address { get; private set; }
+
+
+        public Department() { }
+
+        public Department(string name, string description, int contactPhone, string contactEmail, Address address)
+        {
+            Name = name;
+            Description = description;
+            ContactPhone = contactPhone;
+            ContactEmail = contactEmail;
+            Address = address;
+        }
     }
 }

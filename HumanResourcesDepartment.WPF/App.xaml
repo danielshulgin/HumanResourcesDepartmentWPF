@@ -1,8 +1,24 @@
 ﻿<Application x:Class="HumanResourcesDepartment.WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:HumanResourcesDepartment.WPF">
+             xmlns:local="clr-namespace:HumanResourcesDepartment.WPF"
+             xmlns:views="clr-namespace:HumanResourcesDepartment.WPF.Views"
+             xmlns:viewmodels="clr-namespace:HumanResourcesDepartment.WPF.ViewModels">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Common.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+       
+            <DataTemplate DataType="{x:Type viewmodels:DepartmentPageViewModel}">
+                <views:DepartmentPage/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:PositionPageViewModel}">
+                <views:PositionPage/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:WorkerPageViewModel}">
+                <views:WorkerPage/>
+            </DataTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

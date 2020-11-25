@@ -1,10 +1,14 @@
 ﻿using HumanResourcesDepartment.Domain.Models;
 using HumanResourcesDepartment.Domain.Sercices;
+using HumanResourcesDepartment.EntityFramework.Services;
+using HumanResourcesDepartment.WPF.Navigators;
 using HumanResourcesDepartment.WPF.ViewModels;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace HumanResourcesDepartment.WPF.Comands
 {
@@ -12,21 +16,24 @@ namespace HumanResourcesDepartment.WPF.Comands
     {
         private readonly MainWindowViewModel _viewModel;
 
-        private readonly DepartmentService _departmentService;
+        private readonly PositionService _positionService;
 
 
-        public SelectDepartmentCommand(MainWindowViewModel viewModel, DepartmentService departmentService)
+        public SelectDepartmentCommand(MainWindowViewModel viewModel, PositionService positionService)
         {
             _viewModel = viewModel;
-            _departmentService = departmentService;
+            _positionService = positionService;
         }
 
         public override async Task ExecuteAsync(object parameter)
         {
-            if (parameter is Department)
+            if (parameter is Department department)
             {
-                var department = (Department)parameter;
                 _viewModel.SelectDepartment(department);
+                _viewModel.UpdateSelectedPage(ViewType.DepartmentPage);
+                var positions = await _positionService.GetAll();
+                _viewModel.SelectedPositions = positions.Where(p => p.Department.Id == department.Id);
+                _viewModel.SelectedWorkers = positions.Where(p => p.Department.Id == department.Id).Select(p => p.Worker).Distinct();
             }
         }
     }

@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResourcesDepartment.En
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResourcesDepartment.Domain", "HumanResourcesDepartment.Domain\HumanResourcesDepartment.Domain.csproj", "{BC789092-8179-4D20-AFA7-D0DDD35DF9E8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{6B781159-01E9-4516-862E-B832534013AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestConsoleApp", "ConsoleApp1\TestConsoleApp.csproj", "{6B781159-01E9-4516-862E-B832534013AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanResourcesDepartment.WPF", "HumanResourcesDepartment.WPF\HumanResourcesDepartment.WPF.csproj", "{EF248439-068B-49AA-A270-C9ADCA8D5D7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResourcesDepartment.WPF", "HumanResourcesDepartment.WPF\HumanResourcesDepartment.WPF.csproj", "{EF248439-068B-49AA-A270-C9ADCA8D5D7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

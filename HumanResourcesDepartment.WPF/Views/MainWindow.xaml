@@ -1,0 +1,132 @@
+﻿<Window x:Class="HumanResourcesDepartment.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HumanResourcesDepartment.WPF"
+        xmlns:nav="clr-namespace:HumanResourcesDepartment.WPF.Navigators"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0" Background="LightGray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="30" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Content="Departments" />
+            <Border Margin="3" Grid.Column="1" 
+                BorderBrush="Gray"
+                Background="White"
+                BorderThickness="1,1,1,1"
+                CornerRadius="6">
+                <Button Margin="3" 
+                        Grid.Column="0" 
+                        Grid.Row="0" 
+                        Background="White" 
+                        BorderBrush="White" 
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="15" 
+                        Content="+" 
+                        Click="HandleCreateDepartemntClick"/>
+            </Border>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="0" Background="LightGray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="30" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Content="Positions" />
+            <Border Margin="3" Grid.Column="1" 
+                BorderBrush="Gray"
+                Background="White"
+                BorderThickness="1,1,1,1"
+                CornerRadius="6">
+                <Button Margin="3" 
+                        Grid.Column="0" 
+                        Grid.Row="0" 
+                        Background="White" 
+                        BorderBrush="White" 
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="15" 
+                        Content="+" 
+                        Click="HandleCreatePositionClick" />
+            </Border>
+        </Grid>
+        <Grid Grid.Column="2" Grid.Row="0" Background="LightGray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="30" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0" Background="LightGray" BorderThickness="0" Height="30" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Content="Workers"
+                    Command="{Binding SelectAllWorkersCommand}"/>
+            <Border Margin="3" Grid.Column="1" 
+                BorderBrush="Gray"
+                Background="White"
+                BorderThickness="1,1,1,1"
+                CornerRadius="6">
+                <Button Margin="3" 
+                        Grid.Column="0" 
+                        Grid.Row="0" 
+                        Background="White" 
+                        BorderBrush="White" 
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="15" 
+                        Content="+" 
+                        Click="HandleCreateWorkerClick"  />
+            </Border>
+        </Grid>
+        <ItemsControl Grid.Column="0" Grid.Row="1"  x:Name="MyItems"  ItemsSource="{Binding Departments}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding Name}" Command="{Binding ElementName=MyItems, Path=DataContext.SelectDepartmetnCommand }" CommandParameter="{Binding}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <ItemsControl Grid.Column="1" Grid.Row="1" ItemsSource="{Binding SelectedPositions}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding Name}" 
+                            Command="{Binding ElementName=MyItems, Path=DataContext.SelectPositionCommand }" CommandParameter="{Binding}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl> 
+        <ItemsControl Grid.Column="2" Grid.Row="1" ItemsSource="{Binding SelectedWorkers}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding Name}"
+                    Command="{Binding ElementName=MyItems, Path=DataContext.SelectWorkerCommand }" CommandParameter="{Binding}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <ContentControl Grid.Column="3" Grid.Row="1" Content="{Binding CurrentViewModel}"/>
+    </Grid>
+</Window>

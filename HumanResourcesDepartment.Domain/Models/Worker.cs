@@ -6,19 +6,38 @@ namespace HumanResourcesDepartment.Domain.Models
 {
     public class Worker : DomainObject
     {
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
-        public Sex Sex { get; set; }
+        public Sex Sex { get; private set; }
 
-        public int Tin { get; set; }
+        public int Tin { get; private set; }
 
-        public int Phone { get; set; }
+        public int Phone { get; private set; }
 
-        public int ContactEmail { get; set; }
+        public string ContactEmail { get; private set; }
 
-        public Address Address { get; set; }
+        public Address Address { get; private set; }
 
-        public List<PreviousWorkPlace> PreviousWorkPlaces { get; set; }
+        public IEnumerable<PreviousWorkPlace> PreviousWorkPlaces { get; private set; }
+
+
+        public Worker() { }
+
+        public Worker(string name, Sex sex, int tin, int phone, string contactEmail, Address address, List<PreviousWorkPlace> previousWorkPlaces)
+        {
+            Name = name;
+            Sex = sex;
+            Tin = tin;
+            Phone = phone;
+            ContactEmail = contactEmail;
+            Address = address;
+            PreviousWorkPlaces = previousWorkPlaces;
+        }
+
+        public void AddPreviousWorkPlace(PreviousWorkPlace previousWorkPlace)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public enum Sex

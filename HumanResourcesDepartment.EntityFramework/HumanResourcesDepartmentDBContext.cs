@@ -34,7 +34,30 @@ namespace HumanResourcesDepartment.EntityFramework
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            /* modelBuilder.Entity<Department>(
+             department =>
+             {
+                 department.Property(department => department.Name);
+                 department.Property(department => department.Description);
+                 department.Property(department => department.ContactPhone);
+                 department.Property(department => department.ContactEmail);
+             });
 
+             modelBuilder.Entity<Address>(
+             address =>
+             {
+                 address.Property(e => e.Country);
+                 address.Property(e => e.City);
+                 address.Property(e => e.Street);
+                 address.Property(e => e.HouseNumber);
+             });*/
+            /*modelBuilder.Entity<Address>(address =>
+            {
+                address.Property(e => e.Country);
+                address.Property(e => e.City);
+                address.Property(e => e.Street);
+                address.Property(e => e.HouseNumber);
+            });*/
         }
     }
 }

@@ -4,14 +4,16 @@ using HumanResourcesDepartment.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HumanResourcesDepartment.EntityFramework.Migrations
 {
     [DbContext(typeof(HumanResourcesDepartmentDBContext))]
-    partial class HumanResourcesDepartmentDBContextModelSnapshot : ModelSnapshot
+    [Migration("20201124180033_add_name_for_profession")]
+    partial class add_name_for_profession
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -167,8 +169,8 @@ namespace HumanResourcesDepartment.EntityFramework.Migrations
                     b.Property<int?>("AddressId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ContactEmail")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ContactEmail")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -198,8 +200,8 @@ namespace HumanResourcesDepartment.EntityFramework.Migrations
 
             modelBuilder.Entity("HumanResourcesDepartment.Domain.Models.Position", b =>
                 {
-                    b.HasOne("HumanResourcesDepartment.Domain.Models.Department", "Department")
-                        .WithMany()
+                    b.HasOne("HumanResourcesDepartment.Domain.Models.Department", null)
+                        .WithMany("Positions")
                         .HasForeignKey("DepartmentId");
 
                     b.HasOne("HumanResourcesDepartment.Domain.Models.Profession", "Profession")
