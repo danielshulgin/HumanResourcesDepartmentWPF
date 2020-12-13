@@ -16,8 +16,8 @@
             <DataTemplate DataType="{x:Type viewmodels:PositionPageViewModel}">
                 <views:PositionPage/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewmodels:WorkerPageViewModel}">
-                <views:WorkerPage/>
+            <DataTemplate DataType="{x:Type viewmodels:EmployeePageViewModel}">
+                <views:EmployeePage/>
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>

@@ -24,11 +24,11 @@ namespace HumanResourcesDepartment.WPF
             var dbContextFactory = new HumanResourcesDbContextFactory("server=(localdb)\\MSSQLLocalDB;Database=HumanResourcesDepartmentDB;Trusted_Connection=True;");
             var departmentService = new DepartmentService(dbContextFactory);
             var positionService = new PositionService(dbContextFactory);
-            var workerService = new GenericDataService<Worker>(dbContextFactory);
+            var employeeService = new EmployeeDataService(dbContextFactory);
 
             Window window = new MainWindow();
 
-            window.DataContext = new MainWindowViewModel(departmentService, positionService, workerService);
+            window.DataContext = new MainWindowViewModel(departmentService, positionService, employeeService);
             window.Show();
 
             base.OnStartup(e);

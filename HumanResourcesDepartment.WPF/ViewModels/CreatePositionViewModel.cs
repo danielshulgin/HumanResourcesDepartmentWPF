@@ -92,7 +92,7 @@ namespace HumanResourcesDepartment.WPF.ViewModels
         }
 
 
-        public CreatePositionViewModel(PositionService positionService, DepartmentService departmentService, GenericDataService<Worker> workerService, GenericDataService<Profession> professionService, MainWindowViewModel mainWindowViewModel)
+        public CreatePositionViewModel(PositionService positionService, DepartmentService departmentService, GenericDataService<Employee> workerService, GenericDataService<Profession> professionService, MainWindowViewModel mainWindowViewModel)
         {
             CreatePositionCommand = new CreatePositionCommand(this, mainWindowViewModel, positionService, departmentService, workerService, professionService);
         }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HumanResourcesDepartment.EntityFramework.Sercices
 {
-    public class DepartmentService
+    public class DepartmentService : IDataService<Department>
     {
         private readonly HumanResourcesDbContextFactory _contextFactory;
         private readonly NonQueryDataService<Department> _nonQueryDataService;

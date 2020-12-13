@@ -16,9 +16,9 @@ namespace HumanResourcesDepartment.WPF.Views
     /// <summary>
     /// Interaction logic for WorkerPage.xaml
     /// </summary>
-    public partial class WorkerPage : UserControl
+    public partial class EmployeePage : UserControl
     {
-        public WorkerPage()
+        public EmployeePage()
         {
             InitializeComponent();
         }

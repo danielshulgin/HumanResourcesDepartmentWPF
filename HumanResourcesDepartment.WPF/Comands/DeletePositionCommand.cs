@@ -30,7 +30,7 @@ namespace HumanResourcesDepartment.WPF.Comands
             {
                 await _positionService.Delete(position.Id);
                 _mainWindowViewModel.SelectedPositions = _mainWindowViewModel.SelectedPositions.Where(w => w.Id != position.Id);
-                _mainWindowViewModel.SelectedWorkers = _mainWindowViewModel.SelectedPositions.Select(p => p.Worker);
+                _mainWindowViewModel.SelectedEmployees = _mainWindowViewModel.SelectedPositions.Select(p => p.Employee);
             }
            
         }

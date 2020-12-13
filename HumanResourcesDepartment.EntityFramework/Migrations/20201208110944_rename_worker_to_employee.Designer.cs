@@ -4,14 +4,16 @@ using HumanResourcesDepartment.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HumanResourcesDepartment.EntityFramework.Migrations
 {
     [DbContext(typeof(HumanResourcesDepartmentDBContext))]
-    partial class HumanResourcesDepartmentDBContextModelSnapshot : ModelSnapshot
+    [Migration("20201208110944_rename_worker_to_employee")]
+    partial class rename_worker_to_employee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

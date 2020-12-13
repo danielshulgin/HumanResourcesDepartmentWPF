@@ -23,7 +23,7 @@ namespace HumanResourcesDepartment.WPF.ViewModels
 
         private PositionPageViewModel _positionPageViewModell;
 
-        private WorkerPageViewModel _workerPageViewModel;
+        private EmployeePageViewModel _workerPageViewModel;
 
         private IEnumerable<Department> _departments;
 
@@ -39,18 +39,18 @@ namespace HumanResourcesDepartment.WPF.ViewModels
                 OnPropertyChanged(nameof(Departments));
             }
         }
-        private IEnumerable<Worker> _selectedWorkers;
+        private IEnumerable<Employee> _selectedEmployees;
 
-        public IEnumerable<Worker> SelectedWorkers
+        public IEnumerable<Employee> SelectedEmployees
         {
             get
             {
-                return _selectedWorkers;
+                return _selectedEmployees;
             }
             set
             {
-                _selectedWorkers = value;
-                OnPropertyChanged(nameof(SelectedWorkers));
+                _selectedEmployees = value;
+                OnPropertyChanged(nameof(SelectedEmployees));
             }
         }
 
@@ -97,25 +97,28 @@ namespace HumanResourcesDepartment.WPF.ViewModels
             {
                 _positionPageViewModell.Position = value;
                 _currentPosition = value;
-                SelectedWorkers = new List<Worker>() { _currentPosition.Worker};
+                if (_currentPosition.Employee != null)
+                {
+                    SelectedEmployees = new List<Employee>() { _currentPosition.Employee };
+                }
                 OnPropertyChanged(nameof(CurrentPosition));
-                OnPropertyChanged(nameof(SelectedWorkers));
+                OnPropertyChanged(nameof(SelectedEmployees));
             }
         }
 
-        private Worker _currentWorker;
+        private Employee _currentEmployee;
 
-        public Worker CurrentWorker
+        public Employee CurrentEmployee
         {
             get
             {
-                return _currentWorker;
+                return _currentEmployee;
             }
             set
             {
-                _workerPageViewModel.Worker= value;
-                _currentWorker = value;
-                OnPropertyChanged(nameof(CurrentWorker));
+                _workerPageViewModel.Employee= value;
+                _currentEmployee = value;
+                OnPropertyChanged(nameof(CurrentEmployee));
             }
         }
 
@@ -138,25 +141,25 @@ namespace HumanResourcesDepartment.WPF.ViewModels
 
         public ICommand SelectPositionCommand { get; }
 
-        public ICommand SelectWorkerCommand { get; }
+        public ICommand SelectEmployeeCommand { get; }
 
-        public ICommand SelectAllWorkersCommand { get; }
+        public ICommand SelectAllEmployeesCommand { get; }
 
         public ICommand UpdateCurrentViewModel => new UpdateCurrentViewwModelCommand(this);
 
 
-        public MainWindowViewModel(DepartmentService departmentService, PositionService positionService, GenericDataService<Worker> workerService)
+        public MainWindowViewModel(DepartmentService departmentService, PositionService positionService, IDataService<Employee> workerService)
         {
             _departmentService = departmentService;
             _positionService = positionService;
             SelectDepartmetnCommand = new SelectDepartmentCommand(this, positionService);
             SelectPositionCommand = new SelectPositionCommand(this, positionService);
-            SelectWorkerCommand = new SelectWorkerCommand(this);
-            SelectAllWorkersCommand = new SelectAllWorkersCommand(this, workerService);
+            SelectEmployeeCommand = new SelectEmployeeCommand(this);
+            SelectAllEmployeesCommand = new SelectAllEmployeesCommand(this, workerService);
             
             _departmentPageViewModel = new DepartmentPageViewModel(this, departmentService, positionService);
             _positionPageViewModell = new PositionPageViewModel();
-            _workerPageViewModel = new WorkerPageViewModel();
+            _workerPageViewModel = new EmployeePageViewModel();
 
             UpdateDepartments();
         }
@@ -171,9 +174,9 @@ namespace HumanResourcesDepartment.WPF.ViewModels
             CurrentPosition = position;
         }
         
-        public void SelectWorker(Worker worker)
+        public void SelectEmployee(Employee employee)
         {
-            CurrentWorker = worker;
+            CurrentEmployee = employee;
         }
 
         public void UpdateDepartments()
@@ -197,7 +200,7 @@ namespace HumanResourcesDepartment.WPF.ViewModels
                 case ViewType.PositionPage:
                     CurrentViewModel = _positionPageViewModell;
                     break;
-                case ViewType.WorkerPage:
+                case ViewType.EmployeePage:
                     CurrentViewModel = _workerPageViewModel;
                     break;
             }

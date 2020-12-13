@@ -10,7 +10,7 @@ namespace HumanResourcesDepartment.WPF.Navigators
     {
         DepartmentPage,
         PositionPage,
-        WorkerPage
+        EmployeePage
     }
 
     public interface INavigator

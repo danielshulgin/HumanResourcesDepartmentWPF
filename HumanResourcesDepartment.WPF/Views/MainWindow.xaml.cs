@@ -39,9 +39,9 @@ namespace HumanResourcesDepartment.WPF
             subWindow.Show();
         }
         
-        public void HandleCreateWorkerClick(object sender, RoutedEventArgs e)
+        public void HandleCreateEmployeeClick(object sender, RoutedEventArgs e)
         {
-            CreateWorkerWindow subWindow = new CreateWorkerWindow(DataContext as MainWindowViewModel);
+            CreateEmployeeWindow subWindow = new CreateEmployeeWindow(DataContext as MainWindowViewModel);
             subWindow.Show();
         }
     }

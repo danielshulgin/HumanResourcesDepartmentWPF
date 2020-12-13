@@ -6,26 +6,24 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace HumanResourcesDepartment.WPF.Comands
 {
-    public class SelectWorkerCommand : AsyncCommandBase
+    public class SelectAllEmployeesCommand : AsyncCommandBase
     {
         private readonly MainWindowViewModel _viewModel;
 
-        public SelectWorkerCommand(MainWindowViewModel viewModel)
+        private readonly IDataService<Employee> _employeeService;
+
+        public SelectAllEmployeesCommand(MainWindowViewModel viewModel, IDataService<Employee> employeeService)
         {
             _viewModel = viewModel;
+            _employeeService = employeeService;
         }
 
         public override async Task ExecuteAsync(object parameter)
         {
-            if (parameter is Worker worker)
-            {
-                _viewModel.SelectWorker(worker);
-                _viewModel.UpdateSelectedPage(ViewType.WorkerPage);
-            }
+            _viewModel.SelectedEmployees = await _employeeService.GetAll();
         }
     }
 }

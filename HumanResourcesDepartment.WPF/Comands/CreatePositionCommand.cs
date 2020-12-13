@@ -20,12 +20,12 @@ namespace HumanResourcesDepartment.WPF.Comands
 
         private readonly DepartmentService _departmentService;
 
-        private readonly GenericDataService<Worker> _workerService;
+        private readonly GenericDataService<Employee> _workerService;
 
         private readonly GenericDataService<Profession> _profesionService;
 
 
-        public CreatePositionCommand(CreatePositionViewModel viewModel, MainWindowViewModel mainWindowViewModel, PositionService positionService, DepartmentService departmentService, GenericDataService<Worker> workerService, GenericDataService<Profession> professionService)
+        public CreatePositionCommand(CreatePositionViewModel viewModel, MainWindowViewModel mainWindowViewModel, PositionService positionService, DepartmentService departmentService, GenericDataService<Employee> workerService, GenericDataService<Profession> professionService)
         {
             _viewModel = viewModel;
             _mainWindowViewModel = mainWindowViewModel;

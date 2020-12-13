@@ -12,7 +12,7 @@ namespace HumanResourcesDepartment.EntityFramework
         {
         }
 
-        public DbSet<Worker> Workers { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
         public DbSet<Department> Departments { get; set; }
 

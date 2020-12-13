@@ -11,14 +11,14 @@ using System.Threading.Tasks;
 
 namespace HumanResourcesDepartment.WPF.Comands
 {
-    public class DeleteWorkerCommand : AsyncCommandBase
+    public class DeleteEmployeeCommand : AsyncCommandBase
     {
         private readonly MainWindowViewModel _mainWindowViewModel;
 
-        private readonly GenericDataService<Worker> _workerService;
+        private readonly GenericDataService<Employee> _workerService;
 
 
-        public DeleteWorkerCommand(MainWindowViewModel mainWindowViewModel, GenericDataService<Worker> workerService)
+        public DeleteEmployeeCommand(MainWindowViewModel mainWindowViewModel, GenericDataService<Employee> workerService)
         {
             _mainWindowViewModel = mainWindowViewModel;
             _workerService = workerService;
@@ -26,10 +26,10 @@ namespace HumanResourcesDepartment.WPF.Comands
 
         public override async Task ExecuteAsync(object parameter)
         {
-            if (parameter is Worker worker)
+            if (parameter is Employee worker)
             {
                 await _workerService.Delete(worker.Id);
-                _mainWindowViewModel.SelectedWorkers = _mainWindowViewModel.SelectedWorkers.Where(w => w.Id != worker.Id);
+                _mainWindowViewModel.SelectedEmployees = _mainWindowViewModel.SelectedEmployees.Where(w => w.Id != worker.Id);
             }
            
         }

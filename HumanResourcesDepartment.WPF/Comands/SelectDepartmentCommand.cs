@@ -33,7 +33,11 @@ namespace HumanResourcesDepartment.WPF.Comands
                 _viewModel.UpdateSelectedPage(ViewType.DepartmentPage);
                 var positions = await _positionService.GetAll();
                 _viewModel.SelectedPositions = positions.Where(p => p.Department.Id == department.Id);
-                _viewModel.SelectedWorkers = positions.Where(p => p.Department.Id == department.Id).Select(p => p.Worker).Distinct();
+                _viewModel.SelectedEmployees = 
+                    positions.Where(p => p.Department.Id == department.Id)
+                             .Select(p => p.Employee)
+                             .Where(emp => emp != null)
+                             .Distinct();
             }
         }
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HumanResourcesDepartment.Domain.Models
 {
-    public class Worker : DomainObject
+    public class Employee : DomainObject
     {
         public string Name { get; private set; }
 
@@ -21,9 +21,9 @@ namespace HumanResourcesDepartment.Domain.Models
         public IEnumerable<PreviousWorkPlace> PreviousWorkPlaces { get; private set; }
 
 
-        public Worker() { }
+        public Employee() { }
 
-        public Worker(string name, Sex sex, int tin, int phone, string contactEmail, Address address, List<PreviousWorkPlace> previousWorkPlaces)
+        public Employee(string name, Sex sex, int tin, int phone, string contactEmail, Address address, List<PreviousWorkPlace> previousWorkPlaces)
         {
             Name = name;
             Sex = sex;

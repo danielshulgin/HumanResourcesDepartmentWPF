@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace HumanResourcesDepartment.WPF.Comands
 {
-    public class CreateWorkerCommand : AsyncCommandBase
+    public class CreateEmployeeCommand : AsyncCommandBase
     {
-        private readonly CreateWorkerViewModel _viewModel;
+        private readonly CreateEmployeeViewModel _viewModel;
 
-        private readonly GenericDataService<Worker> _workerService;
+        private readonly GenericDataService<Employee> _workerService;
 
 
-        public CreateWorkerCommand(CreateWorkerViewModel createWorkerViewModel, GenericDataService<Worker> workerService)
+        public CreateEmployeeCommand(CreateEmployeeViewModel createWorkerViewModel, GenericDataService<Employee> workerService)
         {
             _viewModel = createWorkerViewModel;
             _workerService = workerService;
@@ -26,7 +26,7 @@ namespace HumanResourcesDepartment.WPF.Comands
         {
             var adress = new Address(_viewModel.Country, _viewModel.City, _viewModel.Street, _viewModel.HouseNumber);
 
-            var worker = new Worker(_viewModel.Name, _viewModel.Sex, _viewModel.Tin, _viewModel.Phone, _viewModel.ContactEmail, adress, null);
+            var worker = new Employee(_viewModel.Name, _viewModel.Sex, _viewModel.Tin, _viewModel.Phone, _viewModel.ContactEmail, adress, null);
 
             await _workerService.Create(worker);
         }

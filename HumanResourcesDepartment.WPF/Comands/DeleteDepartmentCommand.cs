@@ -39,7 +39,7 @@ namespace HumanResourcesDepartment.WPF.Comands
 
                 await _departmentService.Delete(department.Id);
 
-                _mainWindowViewModel.SelectedWorkers = null;
+                _mainWindowViewModel.SelectedEmployees = null;
                 _mainWindowViewModel.SelectedPositions = null;
                 _mainWindowViewModel.CurrentDepartment = null;
                 _mainWindowViewModel.UpdateDepartments();

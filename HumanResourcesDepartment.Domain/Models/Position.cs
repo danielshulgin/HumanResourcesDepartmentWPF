@@ -8,7 +8,7 @@ namespace HumanResourcesDepartment.Domain.Models
     {
         public string Name { get; private set; }
 
-        public Worker Worker { get; private set; }
+        public Employee Employee { get; private set; }
 
         public Department Department { get; private set; }
 
@@ -19,16 +19,16 @@ namespace HumanResourcesDepartment.Domain.Models
 
         public Position() { }
 
-        public Position(string name, Worker worker, Profession profession, Department department, int salary)
+        public Position(string name, Employee employee, Profession profession, Department department, int salary)
         {
             Name = name;
-            Worker = worker;
+            Employee = employee;
             Profession = profession;
             Department = department;
             Salary = salary;
         }
 
-        public bool AddWorkerToPosition(Worker worker)
+        public bool AddWorkerToPosition(Employee employee)
         {
             throw new NotImplementedException();
         }

@@ -5,20 +5,20 @@ using System.Text;
 
 namespace HumanResourcesDepartment.WPF.ViewModels
 {
-    public class WorkerPageViewModel : ViewModelBase
+    public class EmployeePageViewModel : ViewModelBase
     {
-        private Worker _worker;
+        private Employee _employee;
 
-        public Worker Worker
+        public Employee Employee
         {
             get
             {
-                return _worker;
+                return _employee;
             }
             set
             {
-                _worker = value;
-                OnPropertyChanged(nameof(Worker));
+                _employee = value;
+                OnPropertyChanged(nameof(Employee));
             }
         }
     }

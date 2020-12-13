@@ -21,14 +21,14 @@ namespace HumanResourcesDepartment.WPF.Views
     /// <summary>
     /// Interaction logic for CreateWorkerWindow.xaml
     /// </summary>
-    public partial class CreateWorkerWindow : Window
+    public partial class CreateEmployeeWindow : Window
     {
 
-        public CreateWorkerWindow(MainWindowViewModel mainWindowViewModel)
+        public CreateEmployeeWindow(MainWindowViewModel mainWindowViewModel)
         {
             HumanResourcesDbContextFactory dbContextFactory = new HumanResourcesDbContextFactory("server=(localdb)\\MSSQLLocalDB;Database=HumanResourcesDepartmentDB;Trusted_Connection=True;");
-            var workerService = new GenericDataService<Worker>(dbContextFactory);
-            this.DataContext = new CreateWorkerViewModel(workerService, mainWindowViewModel);
+            var workerService = new GenericDataService<Employee>(dbContextFactory);
+            this.DataContext = new CreateEmployeeViewModel(workerService, mainWindowViewModel);
             InitializeComponent();
         }
 
