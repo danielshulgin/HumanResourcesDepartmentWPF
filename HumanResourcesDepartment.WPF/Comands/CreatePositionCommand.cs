@@ -20,12 +20,12 @@ namespace HumanResourcesDepartment.WPF.Comands
 
         private readonly DepartmentService _departmentService;
 
-        private readonly GenericDataService<Employee> _workerService;
+        private readonly EmployeeDataService _workerService;
 
         private readonly GenericDataService<Profession> _profesionService;
 
 
-        public CreatePositionCommand(CreatePositionViewModel viewModel, MainWindowViewModel mainWindowViewModel, PositionService positionService, DepartmentService departmentService, GenericDataService<Employee> workerService, GenericDataService<Profession> professionService)
+        public CreatePositionCommand(CreatePositionViewModel viewModel, MainWindowViewModel mainWindowViewModel, PositionService positionService, DepartmentService departmentService, EmployeeDataService workerService, GenericDataService<Profession> professionService)
         {
             _viewModel = viewModel;
             _mainWindowViewModel = mainWindowViewModel;
@@ -40,7 +40,11 @@ namespace HumanResourcesDepartment.WPF.Comands
             var worker = await _workerService.Get(_viewModel.WorkerId);
             var professsion = await _profesionService.Get(_viewModel.ProfessionId);
             var department = await _departmentService.Get(_viewModel.DepartmentId);
-            var position = new Position(_viewModel.Name, worker, professsion, department, _viewModel.Salary);
+            worker.Address = null;
+            department.Address = null;
+            var position = new Position(_viewModel.Name, worker, professsion,
+                department
+                , _viewModel.Salary);
 
             await _positionService.Create(position);
 

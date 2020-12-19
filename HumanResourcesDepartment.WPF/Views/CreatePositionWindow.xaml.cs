@@ -23,12 +23,11 @@ namespace HumanResourcesDepartment.WPF.Views
     /// </summary>
     public partial class CreatePositionWindow : Window
     {
-        public CreatePositionWindow(MainWindowViewModel mainWindowViewModel)
+        public CreatePositionWindow(MainWindowViewModel mainWindowViewModel, HumanResourcesDbContextFactory dbContextFactory)
         {
-            HumanResourcesDbContextFactory dbContextFactory = new HumanResourcesDbContextFactory("server=(localdb)\\MSSQLLocalDB;Database=HumanResourcesDepartmentDB;Trusted_Connection=True;");
             var positionService = new PositionService(dbContextFactory);
             var departmentService = new DepartmentService(dbContextFactory);
-            var workerService = new GenericDataService<Employee>(dbContextFactory);
+            var workerService = new EmployeeDataService(dbContextFactory);
             var professionService = new GenericDataService<Profession>(dbContextFactory);
             this.DataContext = new CreatePositionViewModel(positionService, departmentService, workerService, professionService, mainWindowViewModel);
             InitializeComponent();

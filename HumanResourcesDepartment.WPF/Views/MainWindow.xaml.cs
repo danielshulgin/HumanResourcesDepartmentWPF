@@ -1,4 +1,5 @@
-﻿using HumanResourcesDepartment.WPF.ViewModels;
+﻿using HumanResourcesDepartment.EntityFramework;
+using HumanResourcesDepartment.WPF.ViewModels;
 using HumanResourcesDepartment.WPF.Views;
 using System;
 using System.Collections.Generic;
@@ -22,8 +23,11 @@ namespace HumanResourcesDepartment.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private HumanResourcesDbContextFactory _dbContextFactor;
+
+        public MainWindow(HumanResourcesDbContextFactory dbContextFactor)
         {
+            _dbContextFactor = dbContextFactor;
             InitializeComponent();
         }
 
@@ -35,7 +39,7 @@ namespace HumanResourcesDepartment.WPF
 
         public void HandleCreatePositionClick(object sender, RoutedEventArgs e)
         {
-            CreatePositionWindow subWindow = new CreatePositionWindow(DataContext as MainWindowViewModel);
+            CreatePositionWindow subWindow = new CreatePositionWindow(DataContext as MainWindowViewModel, _dbContextFactor);
             subWindow.Show();
         }
         

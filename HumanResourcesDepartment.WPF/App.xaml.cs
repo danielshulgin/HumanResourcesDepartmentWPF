@@ -26,7 +26,7 @@ namespace HumanResourcesDepartment.WPF
             var positionService = new PositionService(dbContextFactory);
             var employeeService = new EmployeeDataService(dbContextFactory);
 
-            Window window = new MainWindow();
+            Window window = new MainWindow(dbContextFactory);
 
             window.DataContext = new MainWindowViewModel(departmentService, positionService, employeeService);
             window.Show();

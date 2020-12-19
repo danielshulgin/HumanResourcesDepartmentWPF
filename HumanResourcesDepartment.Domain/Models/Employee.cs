@@ -16,7 +16,7 @@ namespace HumanResourcesDepartment.Domain.Models
 
         public string ContactEmail { get; private set; }
 
-        public Address Address { get; private set; }
+        public Address Address { get;  set; }
 
         public IEnumerable<PreviousWorkPlace> PreviousWorkPlaces { get; private set; }
 
