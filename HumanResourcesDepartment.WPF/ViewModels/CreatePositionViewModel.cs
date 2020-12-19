@@ -96,14 +96,5 @@ namespace HumanResourcesDepartment.WPF.ViewModels
         {
             CreatePositionCommand = new CreatePositionCommand(this, mainWindowViewModel, positionService, departmentService, workerService, professionService);
         }
-
-        /*public bool IsValuesCorrect()
-        {
-            if (!Regex.IsMatch(_contactPhone.ToString(), @"\d{12}"))
-            {
-                return false;
-            }
-            return true;
-        }*/
     }
 }

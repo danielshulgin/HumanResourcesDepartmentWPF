@@ -39,6 +39,7 @@ namespace HumanResourcesDepartment.WPF.ViewModels
                 OnPropertyChanged(nameof(Departments));
             }
         }
+
         private IEnumerable<Employee> _selectedEmployees;
 
         public IEnumerable<Employee> SelectedEmployees

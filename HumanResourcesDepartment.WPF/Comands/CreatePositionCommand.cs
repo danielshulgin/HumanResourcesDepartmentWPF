@@ -39,7 +39,7 @@ namespace HumanResourcesDepartment.WPF.Comands
         {
             var worker = await _workerService.Get(_viewModel.WorkerId);
             var professsion = await _profesionService.Get(_viewModel.ProfessionId);
-            var department = await _departmentService.Get(_viewModel.ProfessionId);
+            var department = await _departmentService.Get(_viewModel.DepartmentId);
             var position = new Position(_viewModel.Name, worker, professsion, department, _viewModel.Salary);
 
             await _positionService.Create(position);

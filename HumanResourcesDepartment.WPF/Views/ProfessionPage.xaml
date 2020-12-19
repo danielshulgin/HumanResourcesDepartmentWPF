@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="HumanResourcesDepartment.WPF.Views.ProfessionPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HumanResourcesDepartment.WPF.Views"
+             xmlns:converters="clr-namespace:HumanResourcesDepartment.WPF.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="400" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0" Background="LightGray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="30" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Content="Professions" />
+            <Border Margin="3" Grid.Column="1" 
+                BorderBrush="Gray"
+                Background="White"
+                BorderThickness="1,1,1,1"
+                CornerRadius="6">
+                <Button Margin="3" 
+                        Grid.Column="0" 
+                        Grid.Row="0" 
+                        Background="White" 
+                        BorderBrush="White" 
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="15" 
+                        Content="+"
+                        Click="HandleCreateProfessionClick"/>
+            </Border>
+        </Grid>
+        <ItemsControl Grid.Column="0" Grid.Row="1"  x:Name="MyItems"  ItemsSource="{Binding Professions}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding Name}" Command="{Binding ElementName=MyItems, Path=DataContext.SelectProfessionCommand }" CommandParameter="{Binding}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <Grid Grid.Column="1"  Grid.RowSpan="2" Background="White">
+            <Grid Margin="15, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Margin="0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" SharedSizeGroup="Label" />
+                        <ColumnDefinition Width="300" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Id:" />
+                    <TextBlock Grid.Column="1" Margin="20,0,0,0"
+                        Text="{Binding CurrentProfession.Id}" />
+                </Grid>
+                <Grid Grid.Row="1" Margin="0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" SharedSizeGroup="Label" />
+                        <ColumnDefinition Width="300" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Name:" />
+                    <TextBlock Grid.Column="1" Margin="20,0,0,0"
+                        Text="{Binding CurrentProfession.Name}" />
+                </Grid>
+                <Grid Grid.Row="2" Margin="0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" SharedSizeGroup="Label" />
+                        <ColumnDefinition Width="300" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="ProfessionCode:" />
+                    <TextBlock Grid.Column="1" Margin="20,0,0,0"
+                        Text="{Binding CurrentProfession.ProfessionCode}" />
+                </Grid>
+
+                <Grid Grid.Row="4" Margin="0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" SharedSizeGroup="Label" />
+                        <ColumnDefinition Width="300" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="AverageSalery:" />
+                    <TextBlock Grid.Column="1" Margin="20,0,0,0"
+                        Text="{Binding CurrentProfession.AverageSalery}" />
+                </Grid>
+                <Grid Grid.Row="5" Margin="0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" SharedSizeGroup="Label" />
+                        <ColumnDefinition Width="300" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Description:" />
+                    <TextBlock Grid.Column="1" Margin="20,0,0,0"
+                        Text="{Binding CurrentProfession.Description}" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

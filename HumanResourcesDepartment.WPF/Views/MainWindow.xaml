@@ -4,36 +4,38 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HumanResourcesDepartment.WPF"
-        xmlns:nav="clr-namespace:HumanResourcesDepartment.WPF.Navigators"
+        xmlns:nav="clr-namespace:HumanResourcesDepartment.WPF.Navigators" xmlns:views="clr-namespace:HumanResourcesDepartment.WPF.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="LightGreen">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="300" />
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" Grid.Row="0" Background="LightGray">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="30" />
-            </Grid.ColumnDefinitions>
+        Title="MainWindow" Height="450" Width="800" Background="White">
+    <TabControl>
+        <TabItem Header="Main Page">
+            <Grid Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="400" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="300" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Grid.Row="0" Background="LightGray">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
+                    </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Content="Departments" />
-            <Border Margin="3" Grid.Column="1" 
+                    <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Content="Departments" />
+                    <Border Margin="3" Grid.Column="1" 
                 BorderBrush="Gray"
                 Background="White"
                 BorderThickness="1,1,1,1"
                 CornerRadius="6">
-                <Button Margin="3" 
+                        <Button Margin="3" 
                         Grid.Column="0" 
                         Grid.Row="0" 
                         Background="White" 
@@ -44,24 +46,24 @@
                         FontSize="15" 
                         Content="+" 
                         Click="HandleCreateDepartemntClick"/>
-            </Border>
-        </Grid>
-        <Grid Grid.Column="1" Grid.Row="0" Background="LightGray">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="30" />
-            </Grid.ColumnDefinitions>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="0" Background="LightGray">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
+                    </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Content="Positions" />
-            <Border Margin="3" Grid.Column="1" 
+                    <Label Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Content="Positions" />
+                    <Border Margin="3" Grid.Column="1" 
                 BorderBrush="Gray"
                 Background="White"
                 BorderThickness="1,1,1,1"
                 CornerRadius="6">
-                <Button Margin="3" 
+                        <Button Margin="3" 
                         Grid.Column="0" 
                         Grid.Row="0" 
                         Background="White" 
@@ -72,25 +74,25 @@
                         FontSize="15" 
                         Content="+" 
                         Click="HandleCreatePositionClick" />
-            </Border>
-        </Grid>
-        <Grid Grid.Column="2" Grid.Row="0" Background="LightGray">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="30" />
-            </Grid.ColumnDefinitions>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="2" Grid.Row="0" Background="LightGray">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
+                    </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Grid.Row="0" Background="LightGray" BorderThickness="0" Height="30" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Content="Workers"
+                    <Button Grid.Column="0" Grid.Row="0" Background="LightGray" BorderThickness="0" Height="30" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Content="Workers"
                     Command="{Binding SelectAllEmployeesCommand}"/>
-            <Border Margin="3" Grid.Column="1" 
+                    <Border Margin="3" Grid.Column="1" 
                 BorderBrush="Gray"
                 Background="White"
                 BorderThickness="1,1,1,1"
                 CornerRadius="6">
-                <Button Margin="3" 
+                        <Button Margin="3" 
                         Grid.Column="0" 
                         Grid.Row="0" 
                         Background="White" 
@@ -101,32 +103,37 @@
                         FontSize="15" 
                         Content="+" 
                         Click="HandleCreateEmployeeClick"  />
-            </Border>
-        </Grid>
-        <ItemsControl Grid.Column="0" Grid.Row="1"  x:Name="MyItems"  ItemsSource="{Binding Departments}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Button Content="{Binding Name}" Command="{Binding ElementName=MyItems, Path=DataContext.SelectDepartmetnCommand }" CommandParameter="{Binding}"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
-        <ItemsControl Grid.Column="1" Grid.Row="1" ItemsSource="{Binding SelectedPositions}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Button Content="{Binding Name}" 
+                    </Border>
+                </Grid>
+                <ItemsControl Grid.Column="0" Grid.Row="1"  x:Name="MyItems"  ItemsSource="{Binding Departments}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Content="{Binding Name}" Command="{Binding ElementName=MyItems, Path=DataContext.SelectDepartmetnCommand }" CommandParameter="{Binding}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <ItemsControl Grid.Column="1" Grid.Row="1" ItemsSource="{Binding SelectedPositions}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Content="{Binding Name}" 
                             Command="{Binding ElementName=MyItems, Path=DataContext.SelectPositionCommand }" CommandParameter="{Binding}"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
-        <ItemsControl Grid.Column="2" Grid.Row="1" ItemsSource="{Binding SelectedEmployees}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Button Content="{Binding Name}"
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <ItemsControl Grid.Column="2" Grid.Row="1" ItemsSource="{Binding SelectedEmployees}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Content="{Binding Name}"
                     Command="{Binding ElementName=MyItems, Path=DataContext.SelectEmployeeCommand }" CommandParameter="{Binding}"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
 
-        <ContentControl Grid.Column="3" Grid.Row="1" Content="{Binding CurrentViewModel}"/>
-    </Grid>
+                <ContentControl Grid.Column="3" Grid.RowSpan="2" Content="{Binding CurrentViewModel}"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Professions">
+            <views:ProfessionPage/>
+        </TabItem>
+    </TabControl>
 </Window>

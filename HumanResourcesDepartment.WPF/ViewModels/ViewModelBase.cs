@@ -13,7 +13,5 @@ namespace HumanResourcesDepartment.WPF.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-
     }
 }

@@ -15,8 +15,9 @@ namespace HumanResourcesDepartment.Domain.Models
         public string Description { get; private set; }
 
 
-        public Profession(int professionCode, int averageSalery, string description)
+        public Profession(string name, int professionCode, int averageSalery, string description)
         {
+            Name = name;
             ProfessionCode = professionCode;
             AverageSalery = averageSalery;
             Description = description;
