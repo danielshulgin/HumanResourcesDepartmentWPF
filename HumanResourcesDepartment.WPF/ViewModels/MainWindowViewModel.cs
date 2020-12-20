@@ -146,8 +146,6 @@ namespace HumanResourcesDepartment.WPF.ViewModels
 
         public ICommand SelectAllEmployeesCommand { get; }
 
-        public ICommand UpdateCurrentViewModel => new UpdateCurrentViewwModelCommand(this);
-
 
         public MainWindowViewModel(DepartmentService departmentService, PositionService positionService, IDataService<Employee> workerService)
         {

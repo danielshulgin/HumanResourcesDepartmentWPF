@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace HumanResourcesDepartment.Domain.Models
+﻿namespace HumanResourcesDepartment.Domain.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public class Position : DomainObject
     {
         public string Name { get; private set; }
@@ -15,7 +15,6 @@ namespace HumanResourcesDepartment.Domain.Models
         public Profession Profession { get; private set; }
 
         public int Salary { get; set; }
-
 
         public Position() { }
 

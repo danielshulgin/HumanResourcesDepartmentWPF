@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Text;
-
-namespace HumanResourcesDepartment.Domain.Models
+﻿namespace HumanResourcesDepartment.Domain.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Text;
+
     public class Address : DomainObject, IEqualityComparer<Address>
     {
         public string Country { get; private set; }
@@ -14,7 +14,6 @@ namespace HumanResourcesDepartment.Domain.Models
         public string Street { get; private set; }
 
         public string HouseNumber { get; private set; }
-
 
         public Address(string country, string city, string street, string houseNumber)
         {

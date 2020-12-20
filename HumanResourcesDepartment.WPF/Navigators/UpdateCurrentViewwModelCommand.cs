@@ -10,9 +10,6 @@ namespace HumanResourcesDepartment.WPF.Navigators
     {
         public event EventHandler CanExecuteChanged;
 
-        private INavigator _navigator;
-
-
         public UpdateCurrentViewwModelCommand(MainWindowViewModel mainWindowViewModel)
         {
             //_navigator = mainWindowViewModel;

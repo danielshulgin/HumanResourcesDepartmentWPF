@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace HumanResourcesDepartment.Domain.Models
+﻿namespace HumanResourcesDepartment.Domain.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public class Employee : DomainObject
     {
         public string Name { get; private set; }
@@ -19,7 +19,6 @@ namespace HumanResourcesDepartment.Domain.Models
         public Address Address { get;  set; }
 
         public IEnumerable<PreviousWorkPlace> PreviousWorkPlaces { get; private set; }
-
 
         public Employee() { }
 
@@ -42,6 +41,7 @@ namespace HumanResourcesDepartment.Domain.Models
 
     public enum Sex
     {
-        Male, Female
+        Male,
+        Female
     }
 }

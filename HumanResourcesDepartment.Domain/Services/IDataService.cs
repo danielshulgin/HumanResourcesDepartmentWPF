@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HumanResourcesDepartment.Domain.Sercices
+﻿namespace HumanResourcesDepartment.Domain.Sercices
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public interface IDataService<T>
     {
         Task<IEnumerable<T>> GetAll();

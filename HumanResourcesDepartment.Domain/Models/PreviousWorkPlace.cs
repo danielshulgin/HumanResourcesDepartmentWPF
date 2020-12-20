@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace HumanResourcesDepartment.Domain.Models
+﻿namespace HumanResourcesDepartment.Domain.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public class PreviousWorkPlace : DomainObject
     {
         public Profession Profession { get; set; }
