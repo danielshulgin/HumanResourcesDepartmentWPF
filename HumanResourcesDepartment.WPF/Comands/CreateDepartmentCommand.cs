@@ -1,9 +1,6 @@
 ﻿using HumanResourcesDepartment.Domain.Models;
 using HumanResourcesDepartment.EntityFramework.Sercices;
 using HumanResourcesDepartment.WPF.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HumanResourcesDepartment.WPF.Comands
@@ -17,7 +14,7 @@ namespace HumanResourcesDepartment.WPF.Comands
         private readonly DepartmentService _departmentService;
 
 
-        public CreateDepartmentCommand(CreateDepartmentViewModel viewModel, MainWindowViewModel mainWindowViewModel,  DepartmentService departmentService)
+        public CreateDepartmentCommand(CreateDepartmentViewModel viewModel, MainWindowViewModel mainWindowViewModel, DepartmentService departmentService)
         {
             _viewModel = viewModel;
             _mainWindowViewModel = mainWindowViewModel;

@@ -1,10 +1,8 @@
-﻿using HumanResourcesDepartment.EntityFramework;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HumanResourcesDepartment.Domain.Models;
+using HumanResourcesDepartment.EntityFramework;
 using Microsoft.EntityFrameworkCore;
-using HumanResourcesDepartment.Domain.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace HumanResourcesDepartment.Domain.Sercices
 {

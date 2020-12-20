@@ -3,9 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
-    using System.Text;
 
-    public class Address : DomainObject, IEqualityComparer<Address>
+    public class Address : DomainObject
     {
         public string Country { get; private set; }
 
@@ -21,21 +20,6 @@
             City = city;
             Street = street;
             HouseNumber = houseNumber;
-        }
-
-        public bool Equals([AllowNull] Address x, [AllowNull] Address y)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetHashCode([DisallowNull] Address obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override string ToString()
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -3,10 +3,7 @@ using HumanResourcesDepartment.Domain.Sercices;
 using HumanResourcesDepartment.EntityFramework.Sercices;
 using HumanResourcesDepartment.EntityFramework.Services;
 using HumanResourcesDepartment.WPF.Comands;
-using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Windows.Input;
 
 namespace HumanResourcesDepartment.WPF.ViewModels
@@ -14,7 +11,7 @@ namespace HumanResourcesDepartment.WPF.ViewModels
     public class CreatePositionViewModel : ViewModelBase
     {
         public ICommand CreatePositionCommand { get; private set; }
-        
+
         private string _name;
 
         private EmployeeDataService _employeeService;

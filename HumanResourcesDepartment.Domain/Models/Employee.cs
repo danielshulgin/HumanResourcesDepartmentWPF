@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Text;
 
     public class Employee : DomainObject
     {
@@ -16,13 +15,13 @@
 
         public string ContactEmail { get; private set; }
 
-        public Address Address { get;  set; }
+        public Address Address { get; set; }
 
         public IEnumerable<PreviousWorkPlace> PreviousWorkPlaces { get; private set; }
 
         public Employee() { }
 
-        public Employee(string name, Sex sex, int tin, int phone, string contactEmail, Address address, List<PreviousWorkPlace> previousWorkPlaces)
+        public Employee(string name, Sex sex, int tin, int phone, string contactEmail, Address address, IEnumerable<PreviousWorkPlace> previousWorkPlaces)
         {
             Name = name;
             Sex = sex;

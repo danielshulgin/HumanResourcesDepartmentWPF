@@ -1,9 +1,5 @@
-﻿using HumanResourcesDepartment.Domain.Sercices;
-using HumanResourcesDepartment.EntityFramework.Sercices;
+﻿using HumanResourcesDepartment.EntityFramework.Sercices;
 using HumanResourcesDepartment.WPF.Comands;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
 
@@ -12,7 +8,7 @@ namespace HumanResourcesDepartment.WPF.ViewModels
     public class CreateDepartmentViewModel : ViewModelBase
     {
         public ICommand CreateDepartmentCommand { get; private set; }
-        
+
         private string _name;
 
         public string Name

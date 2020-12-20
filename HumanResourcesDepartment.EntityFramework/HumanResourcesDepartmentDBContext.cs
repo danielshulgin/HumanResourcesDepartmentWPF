@@ -1,8 +1,5 @@
 ﻿using HumanResourcesDepartment.Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace HumanResourcesDepartment.EntityFramework
 {
@@ -22,13 +19,13 @@ namespace HumanResourcesDepartment.EntityFramework
 
         public DbSet<PreviousWorkPlace> PreviousWorkPlaces { get; set; }
 
-        public DbSet<Profession> Professions  { get; set; }
+        public DbSet<Profession> Professions { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("server=(localdb)\\MSSQLLocalDB;Database=HumanResourcesDepartmentDB;Trusted_Connection=True;");
-            
+
             base.OnConfiguring(optionsBuilder);
         }
 

@@ -1,9 +1,5 @@
 ﻿namespace HumanResourcesDepartment.Domain.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
     public class Profession : DomainObject
     {
         public string Name { get; private set; }

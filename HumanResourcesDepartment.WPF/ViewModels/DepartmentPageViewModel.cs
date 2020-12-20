@@ -2,9 +2,6 @@
 using HumanResourcesDepartment.EntityFramework.Sercices;
 using HumanResourcesDepartment.EntityFramework.Services;
 using HumanResourcesDepartment.WPF.Comands;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 
 namespace HumanResourcesDepartment.WPF.ViewModels
@@ -27,7 +24,7 @@ namespace HumanResourcesDepartment.WPF.ViewModels
         }
 
         public ICommand DeleteDepartmentCommand { get; set; }
-        
+
 
         public DepartmentPageViewModel(MainWindowViewModel mainWindowViewModel, DepartmentService departmentService, PositionService positionService)
         {

@@ -1,8 +1,5 @@
 ﻿using HumanResourcesDepartment.Domain.Models;
 using HumanResourcesDepartment.WPF.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HumanResourcesDepartment.WPF.Comands

@@ -1,12 +1,7 @@
 ﻿using HumanResourcesDepartment.Domain.Models;
 using HumanResourcesDepartment.Domain.Sercices;
-using HumanResourcesDepartment.EntityFramework.Sercices;
-using HumanResourcesDepartment.EntityFramework.Services;
 using HumanResourcesDepartment.WPF.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HumanResourcesDepartment.WPF.Comands
@@ -31,7 +26,7 @@ namespace HumanResourcesDepartment.WPF.Comands
                 await _workerService.Delete(worker.Id);
                 _mainWindowViewModel.SelectedEmployees = _mainWindowViewModel.SelectedEmployees.Where(w => w.Id != worker.Id);
             }
-           
+
         }
     }
 }

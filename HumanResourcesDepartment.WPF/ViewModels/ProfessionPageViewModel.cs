@@ -1,10 +1,8 @@
 ﻿using HumanResourcesDepartment.Domain.Models;
 using HumanResourcesDepartment.Domain.Sercices;
 using HumanResourcesDepartment.WPF.Comands;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows.Input;
 
 namespace HumanResourcesDepartment.WPF.ViewModels
@@ -50,7 +48,7 @@ namespace HumanResourcesDepartment.WPF.ViewModels
         {
             _professionService = professionService;
             SelectProfessionCommand = new SelectProfessionCommand(this);
-            SelectAllProfessions(); 
+            SelectAllProfessions();
         }
 
         public void SelectAllProfessions()

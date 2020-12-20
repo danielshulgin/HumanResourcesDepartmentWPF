@@ -4,11 +4,7 @@ using HumanResourcesDepartment.EntityFramework.Sercices;
 using HumanResourcesDepartment.EntityFramework.Services;
 using HumanResourcesDepartment.WPF.Comands;
 using HumanResourcesDepartment.WPF.Navigators;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 using System.Windows.Input;
 
 namespace HumanResourcesDepartment.WPF.ViewModels
@@ -16,8 +12,6 @@ namespace HumanResourcesDepartment.WPF.ViewModels
     public class MainWindowViewModel : ViewModelBase
     {
         private DepartmentService _departmentService;
-
-        private PositionService _positionService;
 
         private DepartmentPageViewModel _departmentPageViewModel;
 
@@ -67,7 +61,7 @@ namespace HumanResourcesDepartment.WPF.ViewModels
             {
                 _selectedPositions = value;
                 OnPropertyChanged(nameof(SelectedPositions));
-            } 
+            }
         }
 
         private Department _currentDepartment;
@@ -117,7 +111,7 @@ namespace HumanResourcesDepartment.WPF.ViewModels
             }
             set
             {
-                _workerPageViewModel.Employee= value;
+                _workerPageViewModel.Employee = value;
                 _currentEmployee = value;
                 OnPropertyChanged(nameof(CurrentEmployee));
             }
@@ -150,12 +144,11 @@ namespace HumanResourcesDepartment.WPF.ViewModels
         public MainWindowViewModel(DepartmentService departmentService, PositionService positionService, IDataService<Employee> workerService)
         {
             _departmentService = departmentService;
-            _positionService = positionService;
             SelectDepartmetnCommand = new SelectDepartmentCommand(this, positionService);
             SelectPositionCommand = new SelectPositionCommand(this, positionService);
             SelectEmployeeCommand = new SelectEmployeeCommand(this);
             SelectAllEmployeesCommand = new SelectAllEmployeesCommand(this, workerService);
-            
+
             _departmentPageViewModel = new DepartmentPageViewModel(this, departmentService, positionService);
             _positionPageViewModell = new PositionPageViewModel();
             _workerPageViewModel = new EmployeePageViewModel();
@@ -172,7 +165,7 @@ namespace HumanResourcesDepartment.WPF.ViewModels
         {
             CurrentPosition = position;
         }
-        
+
         public void SelectEmployee(Employee employee)
         {
             CurrentEmployee = employee;

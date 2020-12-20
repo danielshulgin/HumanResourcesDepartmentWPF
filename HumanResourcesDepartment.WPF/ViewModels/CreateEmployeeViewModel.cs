@@ -1,13 +1,9 @@
 ﻿using HumanResourcesDepartment.Domain.Models;
 using HumanResourcesDepartment.Domain.Sercices;
-using HumanResourcesDepartment.EntityFramework.Sercices;
 using HumanResourcesDepartment.WPF.Comands;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Windows.Input;
 
 namespace HumanResourcesDepartment.WPF.ViewModels
@@ -17,7 +13,7 @@ namespace HumanResourcesDepartment.WPF.ViewModels
         private readonly ErrorsViewModel _errorsViewModel;
 
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
-        
+
         public bool CanCreate => !HasErrors &&
             !string.IsNullOrEmpty(_name) &&
             _tin != 0 &&
@@ -33,7 +29,7 @@ namespace HumanResourcesDepartment.WPF.ViewModels
         public bool HasErrors => _errorsViewModel.HasErrors;
 
         public ICommand CreateEmployeeCommand { get; private set; }
-        
+
         private string _name;
 
         public string Name
@@ -108,7 +104,7 @@ namespace HumanResourcesDepartment.WPF.ViewModels
                 {
                     _errorsViewModel.AddError(nameof(Phone), "Invalid phone");
                 }
-                
+
                 OnPropertyChanged(nameof(Phone));
             }
         }

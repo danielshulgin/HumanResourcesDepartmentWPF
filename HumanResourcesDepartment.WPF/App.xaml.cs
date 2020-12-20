@@ -1,15 +1,7 @@
-﻿using HumanResourcesDepartment.Domain.Models;
-using HumanResourcesDepartment.Domain.Sercices;
-using HumanResourcesDepartment.EntityFramework;
+﻿using HumanResourcesDepartment.EntityFramework;
 using HumanResourcesDepartment.EntityFramework.Sercices;
 using HumanResourcesDepartment.EntityFramework.Services;
 using HumanResourcesDepartment.WPF.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace HumanResourcesDepartment.WPF
@@ -26,9 +18,10 @@ namespace HumanResourcesDepartment.WPF
             var positionService = new PositionService(dbContextFactory);
             var employeeService = new EmployeeDataService(dbContextFactory);
 
-            Window window = new MainWindow(dbContextFactory);
-
-            window.DataContext = new MainWindowViewModel(departmentService, positionService, employeeService);
+            Window window = new MainWindow(dbContextFactory)
+            {
+                DataContext = new MainWindowViewModel(departmentService, positionService, employeeService)
+            };
             window.Show();
 
             base.OnStartup(e);

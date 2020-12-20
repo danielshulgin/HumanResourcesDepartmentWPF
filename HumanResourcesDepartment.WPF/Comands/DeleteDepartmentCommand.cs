@@ -2,10 +2,7 @@
 using HumanResourcesDepartment.EntityFramework.Sercices;
 using HumanResourcesDepartment.EntityFramework.Services;
 using HumanResourcesDepartment.WPF.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HumanResourcesDepartment.WPF.Comands
@@ -19,7 +16,7 @@ namespace HumanResourcesDepartment.WPF.Comands
         private readonly PositionService _positionService;
 
 
-        public DeleteDepartmentCommand(MainWindowViewModel mainWindowViewModel,  DepartmentService departmentService, PositionService positionService)
+        public DeleteDepartmentCommand(MainWindowViewModel mainWindowViewModel, DepartmentService departmentService, PositionService positionService)
         {
             _mainWindowViewModel = mainWindowViewModel;
             _departmentService = departmentService;
@@ -44,7 +41,7 @@ namespace HumanResourcesDepartment.WPF.Comands
                 _mainWindowViewModel.CurrentDepartment = null;
                 _mainWindowViewModel.UpdateDepartments();
             }
-           
+
         }
     }
 }
