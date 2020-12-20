@@ -17,6 +17,12 @@ namespace HumanResourcesDepartment.WPF.ViewModels
         
         private string _name;
 
+        private EmployeeDataService _employeeService;
+
+        private GenericDataService<Profession> _professionService;
+
+        private DepartmentService _departmentService;
+
         public string Name
         {
             get
@@ -30,49 +36,93 @@ namespace HumanResourcesDepartment.WPF.ViewModels
             }
         }
 
-        private int _workerId;
+        private Employee _employee;
 
-        public int WorkerId
+        public Employee Employee
         {
             get
             {
-                return _workerId;
+                return _employee;
             }
             set
             {
-                _workerId = value;
-                OnPropertyChanged(nameof(WorkerId));
+                _employee = value;
+                OnPropertyChanged(nameof(Employee));
             }
         }
 
-        private int _departmentId;
+        private IEnumerable<Employee> _employees;
 
-
-        public int DepartmentId
+        public IEnumerable<Employee> Employees
         {
             get
             {
-                return _departmentId;
+                return _employees;
             }
             set
             {
-                _departmentId = value;
-                OnPropertyChanged(nameof(DepartmentId));
+                _employees = value;
+                OnPropertyChanged(nameof(Employees));
             }
         }
 
-        private int _professionId;
+        private Department _department;
 
-        public int ProfessionId
+        public Department Department
         {
             get
             {
-                return _professionId;
+                return _department;
             }
             set
             {
-                _professionId = value;
-                OnPropertyChanged(nameof(ProfessionId));
+                _department = value;
+                OnPropertyChanged(nameof(Department));
+            }
+        }
+
+        private IEnumerable<Department> _departments;
+
+        public IEnumerable<Department> Departments
+        {
+            get
+            {
+                return _departments;
+            }
+            set
+            {
+                _departments = value;
+                OnPropertyChanged(nameof(Departments));
+            }
+        }
+
+        private Profession _profession;
+
+        public Profession Profession
+        {
+            get
+            {
+                return _profession;
+            }
+            set
+            {
+                _profession = value;
+                OnPropertyChanged(nameof(Profession));
+            }
+        }
+
+        private IEnumerable<Profession> _professions;
+
+        public IEnumerable<Profession> Professions
+        {
+            get
+            {
+                return _professions;
+            }
+            set
+            {
+                _professions = value;
+                OnPropertyChanged(nameof(Professions));
             }
         }
 
@@ -92,9 +142,38 @@ namespace HumanResourcesDepartment.WPF.ViewModels
         }
 
 
-        public CreatePositionViewModel(PositionService positionService, DepartmentService departmentService, EmployeeDataService workerService, GenericDataService<Profession> professionService, MainWindowViewModel mainWindowViewModel)
+        public CreatePositionViewModel(PositionService positionService, DepartmentService departmentService, EmployeeDataService employeeService, GenericDataService<Profession> professionService, MainWindowViewModel mainWindowViewModel)
         {
-            CreatePositionCommand = new CreatePositionCommand(this, mainWindowViewModel, positionService, departmentService, workerService, professionService);
+            _employeeService = employeeService;
+            _professionService = professionService;
+            _departmentService = departmentService;
+            CreatePositionCommand = new CreatePositionCommand(this, mainWindowViewModel, positionService, departmentService, employeeService, professionService);
+            InitializeSoucreCollections();
+        }
+
+        public void InitializeSoucreCollections()
+        {
+            _employeeService.GetAll().ContinueWith(task =>
+            {
+                if (task.Exception == null)
+                {
+                    Employees = task.Result;
+                }
+            });
+            _professionService.GetAll().ContinueWith(task =>
+            {
+                if (task.Exception == null)
+                {
+                    Professions = task.Result;
+                }
+            });
+            _departmentService.GetAll().ContinueWith(task =>
+            {
+                if (task.Exception == null)
+                {
+                    Departments = task.Result;
+                }
+            });
         }
     }
 }

@@ -15,6 +15,18 @@
         Background="White"
         BorderThickness="3"
         CornerRadius="10">
+        <Border.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard TargetProperty="Opacity">
+                            <DoubleAnimation From="0" To="1"
+                                             Duration="0:0:1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </Border.Triggers>
         <Border.Effect>
             <DropShadowEffect BlurRadius="10" Color="Gray" />
         </Border.Effect>

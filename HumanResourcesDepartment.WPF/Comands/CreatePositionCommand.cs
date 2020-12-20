@@ -37,14 +37,10 @@ namespace HumanResourcesDepartment.WPF.Comands
 
         public override async Task ExecuteAsync(object parameter)
         {
-            var worker = await _workerService.Get(_viewModel.WorkerId);
-            var professsion = await _profesionService.Get(_viewModel.ProfessionId);
-            var department = await _departmentService.Get(_viewModel.DepartmentId);
-            worker.Address = null;
-            department.Address = null;
-            var position = new Position(_viewModel.Name, worker, professsion,
-                department
-                , _viewModel.Salary);
+            var employee = _viewModel.Employee;
+            var professsion = _viewModel.Profession;
+            var department = _viewModel.Department;
+            var position = new Position(_viewModel.Name, employee, professsion, department, _viewModel.Salary);
 
             await _positionService.Create(position);
 

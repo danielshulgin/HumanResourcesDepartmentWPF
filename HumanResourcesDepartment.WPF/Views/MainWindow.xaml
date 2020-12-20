@@ -108,7 +108,20 @@
                 <ItemsControl Grid.Column="0" Grid.Row="1"  x:Name="MyItems"  ItemsSource="{Binding Departments}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Button Content="{Binding Name}" Command="{Binding ElementName=MyItems, Path=DataContext.SelectDepartmetnCommand }" CommandParameter="{Binding}"/>
+                            <Button Content="{Binding Name}" Command="{Binding ElementName=MyItems, Path=DataContext.SelectDepartmetnCommand }" CommandParameter="{Binding}">
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Loaded">
+                                        <EventTrigger.Actions>
+                                            <BeginStoryboard>
+                                                <Storyboard TargetProperty="Height">
+                                                    <DoubleAnimation From="1" To="25"
+                                             Duration="0:0:0.2"/>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger.Actions>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
@@ -116,7 +129,20 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Button Content="{Binding Name}" 
-                            Command="{Binding ElementName=MyItems, Path=DataContext.SelectPositionCommand }" CommandParameter="{Binding}"/>
+                            Command="{Binding ElementName=MyItems, Path=DataContext.SelectPositionCommand }" CommandParameter="{Binding}">
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Loaded">
+                                        <EventTrigger.Actions>
+                                            <BeginStoryboard>
+                                                <Storyboard TargetProperty="Height">
+                                                    <DoubleAnimation From="1" To="25"
+                                             Duration="0:0:0.2"/>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger.Actions>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
@@ -124,7 +150,20 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Button Content="{Binding Name}"
-                    Command="{Binding ElementName=MyItems, Path=DataContext.SelectEmployeeCommand }" CommandParameter="{Binding}"/>
+                    Command="{Binding ElementName=MyItems, Path=DataContext.SelectEmployeeCommand }" CommandParameter="{Binding}">
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Loaded">
+                                        <EventTrigger.Actions>
+                                            <BeginStoryboard>
+                                                <Storyboard TargetProperty="Height">
+                                                    <DoubleAnimation From="1" To="25"
+                                             Duration="0:0:0.2"/>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger.Actions>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
