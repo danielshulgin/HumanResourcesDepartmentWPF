@@ -19,9 +19,13 @@
 
         public IEnumerable<PreviousWorkPlace> PreviousWorkPlaces { get; private set; }
 
+        public string Password { get; set; }
+
+        public AccessRights AccessRights { get; set; }
+
         public Employee() { }
 
-        public Employee(string name, Sex sex, int tin, int phone, string contactEmail, Address address, IEnumerable<PreviousWorkPlace> previousWorkPlaces)
+        public Employee(string name, Sex sex, int tin, int phone, string contactEmail, Address address, AccessRights acessRight, string password, IEnumerable<PreviousWorkPlace> previousWorkPlaces)
         {
             Name = name;
             Sex = sex;
@@ -30,6 +34,8 @@
             ContactEmail = contactEmail;
             Address = address;
             PreviousWorkPlaces = previousWorkPlaces;
+            AccessRights = acessRight;
+            Password = password;
         }
 
         public void AddPreviousWorkPlace(PreviousWorkPlace previousWorkPlace)
@@ -42,5 +48,11 @@
     {
         Male,
         Female
+    }
+
+    public enum AccessRights
+    {
+        Full,
+        Limited
     }
 }

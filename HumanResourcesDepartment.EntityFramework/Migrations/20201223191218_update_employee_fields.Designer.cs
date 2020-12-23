@@ -4,14 +4,16 @@ using HumanResourcesDepartment.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HumanResourcesDepartment.EntityFramework.Migrations
 {
     [DbContext(typeof(HumanResourcesDepartmentDBContext))]
-    partial class HumanResourcesDepartmentDBContextModelSnapshot : ModelSnapshot
+    [Migration("20201223191218_update_employee_fields")]
+    partial class update_employee_fields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

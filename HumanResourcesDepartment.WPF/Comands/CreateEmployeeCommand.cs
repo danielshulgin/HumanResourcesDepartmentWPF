@@ -22,7 +22,15 @@ namespace HumanResourcesDepartment.WPF.Comands
         {
             var adress = new Address(_viewModel.Country, _viewModel.City, _viewModel.Street, _viewModel.HouseNumber);
 
-            var worker = new Employee(_viewModel.Name, _viewModel.Sex, _viewModel.Tin, _viewModel.Phone, _viewModel.ContactEmail, adress, null);
+            var worker = new Employee(_viewModel.Name, 
+                _viewModel.Sex, 
+                _viewModel.Tin, 
+                _viewModel.Phone,
+                _viewModel.ContactEmail,
+                adress,
+                _viewModel.AccessRights,
+                _viewModel.Password, 
+                 null);
 
             await _workerService.Create(worker);
         }

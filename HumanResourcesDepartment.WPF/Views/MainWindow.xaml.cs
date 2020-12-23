@@ -1,4 +1,6 @@
 ﻿using HumanResourcesDepartment.EntityFramework;
+using HumanResourcesDepartment.EntityFramework.Sercices;
+using HumanResourcesDepartment.EntityFramework.Services;
 using HumanResourcesDepartment.WPF.ViewModels;
 using HumanResourcesDepartment.WPF.Views;
 using System.Windows;
@@ -12,9 +14,14 @@ namespace HumanResourcesDepartment.WPF
     {
         private HumanResourcesDbContextFactory _dbContextFactor;
 
-        public MainWindow(HumanResourcesDbContextFactory dbContextFactor)
+        public MainWindow()
         {
-            _dbContextFactor = dbContextFactor;
+            var dbContextFactory = new HumanResourcesDbContextFactory("server=(localdb)\\MSSQLLocalDB;Database=HumanResourcesDepartmentDB;Trusted_Connection=True;");
+            var departmentService = new DepartmentService(dbContextFactory);
+            var positionService = new PositionService(dbContextFactory);
+            var employeeService = new EmployeeDataService(dbContextFactory);
+            _dbContextFactor = dbContextFactory;
+            DataContext = new MainWindowViewModel(departmentService, positionService, employeeService);
             InitializeComponent();
         }
 

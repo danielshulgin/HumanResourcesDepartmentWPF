@@ -129,6 +129,37 @@ namespace HumanResourcesDepartment.WPF.ViewModels
             }
         }
 
+        private string _password;
+
+        public string Password
+        {
+            get
+            {
+                return _password;
+            }
+            set
+            {
+                _password = value;
+                OnPropertyChanged(nameof(Password));
+            }
+        }
+
+
+        private AccessRights _accessRights;
+
+        public AccessRights AccessRights
+        {
+            get
+            {
+                return _accessRights;
+            }
+            set
+            {
+                _accessRights = value;
+                OnPropertyChanged(nameof(AccessRights));
+            }
+        }
+
         private string _country;
 
         public string Country

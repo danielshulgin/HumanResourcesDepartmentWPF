@@ -3,12 +3,14 @@ using HumanResourcesDepartment.Domain.Sercices;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace HumanResourcesDepartment.EntityFramework.Services
 {
     public class EmployeeDataService : IDataService<Employee>
     {
         private readonly HumanResourcesDbContextFactory _contextFactory;
+
         private readonly NonQueryDataService<Employee> _nonQueryDataService;
 
         public EmployeeDataService(HumanResourcesDbContextFactory contextFactory)
@@ -35,6 +37,18 @@ namespace HumanResourcesDepartment.EntityFramework.Services
                     .Include(e => e.Address)
                     .FirstOrDefaultAsync((e) => e.Id == id);
                 return entity;
+            }
+        }
+
+        public async Task<Employee> GetByEmail(string email)
+        {
+            using (HumanResourcesDepartmentDBContext context = _contextFactory.CreateDbContext())
+            {
+                IEnumerable<Employee> entities = await context.Employees
+                    .Include(d => d.Address)
+                    .ToListAsync();
+                var resultEmployee = entities.ToList().Find(ent => ent.ContactEmail == email);
+                return resultEmployee;
             }
         }
 
